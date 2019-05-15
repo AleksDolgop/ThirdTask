@@ -48,7 +48,7 @@ function stopWatch(){
     4);
 }
 
-//Объект калькулятор.   
+//Объект игра.   
 const game = new Vue({
     el: '#game',
     data: {
