@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Задание 1</title>
+    <style>
+        .wrapper{
+            padding: 2%;
+        }
+
+        .clearfix{
+            clear:both;
+        }
+
+        #game{
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid gray;
+            padding: 0.5em;
+            min-width: 22.7em;
+        }
+
+        #game .blocks{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #game .blocks .cell{
+            width: 24.45%;
+            border: 1px solid #dadada;
+            height: 5em;
+            float: left;
+        }
+
+        #game .interface{
+            margin-top:0.6em;
+            margin-left: 0.4em;
+        }
+
+        #game .interface p{
+            margin-top: 0.5em;
+            margin-bottom: 0;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="game">
+            <div class="blocks">
+                <div v-for="i in 16" class="cell" @click="cellClick({i})" :style="{background: colors[cellsShowColor[i - 1]]}"></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="interface">               
+                <button @click='startGame'>{{begined?'Стоп':'Старт'}}</button>
+                <p>{{timer.min}}:{{timer.sec}}.{{timer.msec}}</p>
+            </div>
+        </div>
+    </div>
+    <script src='js/common.js'></script>
+</body>
+</html>
