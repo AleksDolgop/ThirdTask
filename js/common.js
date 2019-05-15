@@ -85,6 +85,16 @@ const game = new Vue({
             {
                 clearInterval(this.interval);
                 this.begined = false;
+                
+                //Обнуление времени
+                this.timer.min = '00';
+                this.timer.sec = '00';
+                this.timer.msec = '000';
+                
+                //Окрашиаем поле в белый
+                for (let i = 0; i < 16; i++){
+                    Vue.set(this.cellsShowColor, i, 0);
+                }
                 return;           
             }
 
@@ -93,7 +103,7 @@ const game = new Vue({
           
             //Окрашиаем поле в белый
             for (let i = 0; i < 16; i++){
-                Vue.set(this.cellsShowColor, i, 0)
+                Vue.set(this.cellsShowColor, i, 0);
             }
         
             //Обнуление времени
